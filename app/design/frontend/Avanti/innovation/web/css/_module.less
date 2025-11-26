@@ -1,1 +1,41 @@
+@media (min-width: 768px), print {
+    .header.content {
+        padding: 30px 20px 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 768px), print {
+    .block.block-search {
+        float: right;
+        padding-left: 15px;
+        position: relative;
+        width: 594px;
+        z-index: 4;
+    }
+}
+
+input[type="text"] {
+    border-radius: 10px;
+    border: 1px solid #DDDDDD;
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .navigation ul {
+        padding: 0 35px;
+    }
+    //.navigation ul:first-child:before {
+    //    content: "";
+    //    display: inline-block;
+    //    width: 20px;
+    //    height: 20px;
+    //    background-image: url('@{baseDir}images/icone.svg');
+    //    background-size: contain;
+    //    background-repeat: no-repeat;
+    //    margin-right: 5px;
+    //}
+}
 

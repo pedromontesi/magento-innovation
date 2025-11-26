@@ -3,7 +3,7 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 
     <body>
-        <!-- Adiciona o bloco promo -->
+        <!-- Adiciona o bloco promo no header -->
         <referenceContainer name="header.panel">
             <container name="promo.header.wrapper" htmlClass="promo-wrapper" htmlTag="div">
                 <block class="Magento\Framework\View\Element\Template"
@@ -13,17 +13,23 @@
             </container>
         </referenceContainer>
 
+        <!-- Move header.links para próximo do carrinho -->
+        <move element="header.links" destination="header.content"/>
+        <move element="minicart" destination="header-wrapper" after="-"/>
+        <move element="header.links" destination="header-wrapper" before="minicart"/>
+
+
         <!-- Alterar o logo -->
         <referenceBlock name="logo">
             <arguments>
                 <argument name="logo_file" xsi:type="string">images/logo.svg</argument>
-                <argument name="logo_width" xsi:type="number">300</argument>
-                <argument name="logo_height" xsi:type="number">300</argument>
+                <argument name="logo_width" xsi:type="number">152</argument>
+                <argument name="logo_height" xsi:type="number">27</argument>
                 <argument name="logo_alt" xsi:type="string">avanti-logo</argument>
             </arguments>
         </referenceBlock>
 
-        <!-- Remover o skip_to_content corretamente -->
+        <!-- Remover o skip_to_content -->
         <referenceBlock name="skip_to_content" remove="true"/>
     </body>
 </page>
