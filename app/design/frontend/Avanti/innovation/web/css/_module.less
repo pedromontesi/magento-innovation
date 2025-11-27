@@ -1,41 +1,86 @@
-@media (min-width: 768px), print {
-    .header.content {
-        padding: 30px 20px 0;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-    }
-}
+// Estilos de módulos/componentes
 
-@media (min-width: 768px), print {
-    .block.block-search {
-        float: right;
-        padding-left: 15px;
-        position: relative;
-        width: 594px;
-        z-index: 4;
-    }
-}
-
+// Input padrão
 input[type="text"] {
     border-radius: 10px;
     border: 1px solid #DDDDDD;
 }
 
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-    .navigation ul {
-        padding: 0 35px;
-    }
-    //.navigation ul:first-child:before {
-    //    content: "";
-    //    display: inline-block;
-    //    width: 20px;
-    //    height: 20px;
-    //    background-image: url('@{baseDir}images/icone.svg');
-    //    background-size: contain;
-    //    background-repeat: no-repeat;
-    //    margin-right: 5px;
-    //}
+// Barra promocional
+.promo-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+
 }
+
+.promo-highlight {
+    background: #6220c1;
+    padding: 1px 2px;
+    border-radius: 4px;
+}
+
+.code-highlight {
+    font-style: italic;
+    font-weight: 400;
+}
+
+// Link de login com ícone
+.login-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.login-link:before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url('@{baseDir}images/user.svg') no-repeat center;
+    background-size: contain;
+}
+
+
+.block-search input {
+    font-size: 16px;
+    padding: 0 24px 0 !important;
+}
+
+
+
+
+// Barra de busca
+@media (min-width: 768px), print {
+    .logo {
+        margin: 0 3.125rem 0 0 !important;
+    }
+
+    .block-search.block-search {
+        width: 594px;
+        padding-right: 13.1875rem
+    }
+}
+
+@media (max-width: 768px) {
+    .block.block-search {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 15px;
+        position: relative;
+        width: 361px;
+        z-index: 4;
+    }
+    button.action.search {
+        right: 140px;
+    }
+
+
+
+
+
+}
+
+
 

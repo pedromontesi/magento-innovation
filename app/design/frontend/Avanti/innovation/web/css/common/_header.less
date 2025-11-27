@@ -5,6 +5,8 @@
 //
 //  Mobile
 //  _____________________________________________
+
+
 .media-width(@extremum, @break)
 when
     (@extremum ="max")
@@ -17,6 +19,33 @@ when
 //
 //  Desktop
 //  _____________________________________________
+
+.header.content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 0 0 0 !important;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1300px;
+    width: auto;
+}
+
+.header.links {
+    display: flex;
+    padding: 0;
+    list-style: none;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin: 0 34px 0 0;
+
+}
+
+ul.header.links {
+    padding: 0;
+}
+
+
 .media-width(@extremum, @break)
 when
     (@extremum ="min")
@@ -31,9 +60,7 @@ when
     .page-header .header.content .header.links a {
         .lib-css(color, @theme__color__primary);
     }
-    .logo {
-        margin: 0 50px 0 0;
-    }
+
     .navigation ul {
         .lib-css(display, flex);
         .lib-css(justify-content, space-between);
