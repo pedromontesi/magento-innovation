@@ -13,11 +13,15 @@
             </container>
         </referenceContainer>
 
+        <!-- Remove Default Welcome Message (sem quebrar layout) -->
+        <referenceBlock name="header.container">
+            <referenceBlock name="welcome" remove="true"/>
+        </referenceBlock>
+
         <!-- Move header.links para próximo do carrinho -->
         <move element="header.links" destination="header.content"/>
         <move element="minicart" destination="header-wrapper" after="-"/>
         <move element="header.links" destination="header-wrapper" before="minicart"/>
-
 
         <!-- Alterar o logo -->
         <referenceBlock name="logo">

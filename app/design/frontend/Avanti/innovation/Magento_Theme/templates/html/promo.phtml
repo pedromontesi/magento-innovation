@@ -1,3 +1,10 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+?>
+
 <div class="promo-bar">
-    Get <span class="promo-highlight">&nbsp;$10.00&nbsp;</span> off your first order. Use the coupon <span class="code-highlight">&nbsp;DISCONTO10&nbsp;</span>
+    <?= __('Get %1 off your first order. Use the coupon %2',
+        '<span class="promo-highlight">&nbsp;$10.00&nbsp;</span>',
+        '<span class="code-highlight">&nbsp;DISCONTO10&nbsp;</span>'
+    ) ?>
 </div>
