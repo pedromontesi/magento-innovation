@@ -33,7 +33,7 @@
 
 .header.content {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding: 20px 0 0 0 !important;
     margin-left: auto;
     margin-right: auto;
@@ -41,18 +41,32 @@
     width: auto;
 }
 
+
+ul.header.links:nth-of-type(1)::before {
+    display: none !important;
+    content: none !important;
+}
+
 .header.links {
     display: flex;
     padding: 0;
     list-style: none;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 30px;
     align-items: center;
     margin: 0 34px 0 0;
     position: relative;
 
 }
 
+.header.links::after {
+    content: attr(data-or-text);
+    color: #000;
+    font-weight: 400;
+    font-family: 'Nunito', sans-serif;
+    position: absolute;
+    left: 111px;
+}
 
 
 .header.links .not-logged-in {
@@ -69,8 +83,19 @@
     background-size: contain;
     background-repeat: no-repeat;
     top: 4px;
-    left: -14px;
-    position: absolute;
+    left: 39px;
+    position: relative;
+}
+
+
+.header.links:has(.logged-in)::after {
+    content: none !important;
+}
+
+.header.links.logged-in::after {
+    content: attr(data-or-text);
+    display: none;
+    color: #000;
 }
 
 
@@ -137,5 +162,14 @@ ul.header.links {
     .page-footer {
         .lib-css(background-color, #F5F5F5);
         .lib-css(padding, 64px 0);
+    }
+}
+
+
+@media (min-width: 768px), print {
+    .page-header .header.content .header.links a {
+        font-weight: 400;
+        font-family: 'Nunito', sans-serif;
+        color: #000 !important;
     }
 }

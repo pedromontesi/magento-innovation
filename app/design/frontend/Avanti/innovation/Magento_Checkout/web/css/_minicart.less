@@ -17,16 +17,26 @@
     white-space: normal;
     border-radius: 50%;
     position: absolute;
-    top: -7px;
+    top: -11px;
     right: -20px;
 }
-minicart-wrapper .action.showcart .counter-number {
-    font-weight: 700;
-    text-shadow: none;
+
+.minicart-wrapper .action.showcart .counter-number {
+    text-shadow: 0 0 0 #000;
+    font-weight: bold;
 }
 
 .minicart-wrapper .action.showcart:before {
     background-image: url('@{baseDir}images/cart.svg');
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+    content: '';
+    display: inline-block;
+}
+
+.minicart-wrapper .action.showcart.active::before {
+    background-image: url('@{baseDir}images/cart.svg') !important;
     background-size: contain;
     width: 24px;
     height: 24px;
