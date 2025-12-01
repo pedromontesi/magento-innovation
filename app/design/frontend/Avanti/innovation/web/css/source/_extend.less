@@ -21,12 +21,139 @@
 
 
 
-//.block-search .action.search:before {
-//    content: '';
-//    display: inline-block;
-//    width: 20px;
-//    height: 20px;
-//    background-image: url('@{baseDir}images/search.svg');
-//    background-size: contain;
-//    background-repeat: no-repeat;
-//}
+// =======================================
+//  GLOBAL MOBILE FIRST
+// =======================================
+
+// Busca (mobile)
+.block-search .control {
+    border-top: none !important;
+}
+
+// Footer (mobile)
+.page-footer {
+    .lib-css(background-color, #F5F5F5);
+    .lib-css(padding, 40px 0);
+}
+
+// Featured items - mobile grid
+.custom-featured-section {
+    .lib-css(text-align, center);
+    .lib-css(padding, 20px 0);
+
+    h1 {
+        .lib-css(font-size, 22px);
+        .lib-css(color, #000);
+        .lib-css(font-weight, bold);
+    }
+
+    .featured-items {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+
+        .featured-item {
+            text-align: center;
+
+            img {
+                .lib-css(margin-bottom, 10px);
+            }
+
+            a {
+                .lib-css(display, block);
+                .lib-css(font-size, 14px);
+                .lib-css(color, #000);
+                .lib-css(text-decoration, none);
+
+                &:hover {
+                    .lib-css(text-decoration, underline);
+                }
+            }
+        }
+    }
+}
+
+// =======================================
+//  DESKTOP ONLY
+// =======================================
+@media (min-width: @screen__m) {
+
+    .page-footer {
+        .lib-css(padding, 64px 0);
+    }
+
+    .custom-featured-section {
+        .lib-css(padding, 30px 0);
+
+        h1 {
+            .lib-css(font-size, 28px);
+        }
+
+        .featured-items {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
+
+    .navigation ul {
+        display: flex;
+        justify-content: space-between;
+        flex: 1;
+    }
+}
+
+// =======================================
+//  GLOBAL INPUTS (Mobile First)
+// =======================================
+input[type="text"] {
+    border-radius: 10px;
+    border: 1px solid #DDDDDD;
+}
+
+// Código e destaques genéricos
+.code-highlight {
+    font-style: italic;
+    font-weight: 400;
+}
+
+@media (min-width: 768px), print {
+
+    // Ajuste refinado da aparência dos links de menu
+    .navigation .level0 > .level-top {
+        color: #000 !important;
+        line-height: 47px;
+        padding: 0 12px;
+        font-weight: 400;
+        position: relative;
+        display: inline-block;
+        box-sizing: border-box;
+    }
+
+    // Aparência do item ativo no desktop
+    .navigation .active > .level-top {
+        border-color: #FFF !important;
+        border-style: none !important;
+        font-weight: bold !important;
+    }
+
+    // Oculta ícone de submenu no desktop
+    .navigation .level0.parent > .level-top > .ui-menu-icon {
+        position: absolute;
+        right: 0;
+        display: none !important;
+    }
+
+    // Espaçamento lateral extra no desktop
+    .nav-sections-item-content > .navigation {
+        padding-right: 62px;
+    }
+
+    @media (min-width: 768px), print {
+        .nav-sections-item-content > .navigation {
+            padding-right: 0;
+        }
+    }
+
+
+}

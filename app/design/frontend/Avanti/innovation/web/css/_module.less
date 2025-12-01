@@ -1,18 +1,11 @@
-// Estilos de módulos/componentes
-
-// Input padrão
-input[type="text"] {
-    border-radius: 10px;
-    border: 1px solid #DDDDDD;
-}
-
-// Barra promocional
+// =======================================
+//  PROMO BAR (Mobile First)
+// =======================================
 .promo-bar {
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-
 }
 
 .promo-highlight {
@@ -21,12 +14,9 @@ input[type="text"] {
     border-radius: 4px;
 }
 
-.code-highlight {
-    font-style: italic;
-    font-weight: 400;
-}
-
-// Link de login com ícone
+// =======================================
+//  LOGIN LINK (com ícone)
+// =======================================
 .login-link {
     display: inline-flex;
     align-items: center;
@@ -42,41 +32,45 @@ input[type="text"] {
     background-size: contain;
 }
 
-
+// =======================================
+//  SEARCH FIELD (Mobile First)
+// =======================================
 .block-search input {
     font-size: 16px;
     padding: 0 24px 0 !important;
 }
 
+// =========================
+//  MOBILE FIRST (Default)
+// =========================
+.block.block-search {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 15px;
+    position: relative;
+    width: 100%;
+    max-width: 361px;
+    z-index: 4;
+}
 
-// Barra de busca
-@media (min-width: 768px), print {
+button.action.search {
+    right: 140px;
+}
+
+// =========================
+//  DESKTOP (min-width)
+// =========================
+@media (min-width: @screen__m) {
     .logo {
         margin: 0 3.125rem 0 0 !important;
     }
 
     .block-search.block-search {
         width: 594px;
-        padding-right: 13.1875rem
+        padding-right: 13.1875rem;
+    }
+    .block-search .block-content {
+        margin-bottom: 0;
+        width: 594px;
     }
 }
-
-@media (max-width: 768px) {
-    .block.block-search {
-        display: flex;
-        flex-wrap: wrap;
-        padding-left: 15px;
-        position: relative;
-        width: 361px;
-        z-index: 4;
-    }
-
-    button.action.search {
-        right: 140px;
-    }
-
-
-}
-
-
-

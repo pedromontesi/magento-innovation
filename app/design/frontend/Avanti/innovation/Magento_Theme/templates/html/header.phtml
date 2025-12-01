@@ -1,11 +1,16 @@
 <?php
 /** @var \Magento\Framework\View\Element\Template $block */
 ?>
-<ul class="header links" data-bind="scope: 'customer'" data-or-text="<?= __('or') ?>">
-    <!-- ko if: customer().fullname -->
-    <li class="greet welcome">
-        <span class="logged-in" data-bind="text: 'Bem-vindo, ' + customer().fullname + '!'"></span>
-    </li>
-    <!-- /ko -->
-    <?= $block->getChildHtml() ?>
+<ul class="header links" data-or-text="<?= __('or') ?>">
+
+    <ul class="header links" data-bind="scope: 'customer'">
+        <!-- ko if: customer().fullname -->
+        <li class="greet welcome">
+            <span class="logged-in" data-bind="text: 'Bem-vindo, ' + customer().fullname + '!'"></span>
+        </li>
+        <!-- /ko -->
+    </ul>
+
+    <?= $block->getChildHtml() ?> <!-- Entrar / Criar conta -->
+
 </ul>

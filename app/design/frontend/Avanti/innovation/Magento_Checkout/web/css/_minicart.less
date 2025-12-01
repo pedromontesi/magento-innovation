@@ -1,9 +1,13 @@
-.minicart-wrapper .action.showcart{
+
+.minicart-wrapper .action.showcart {
     white-space: nowrap;
     position: relative;
+    top: -7px;
+    left: 14px;
 }
 
-.minicart-wrapper .action.showcart .counter.qty {
+.minicart-wrapper .action.showcart .counter.qty
+{
     background: #005CFF;
     color: #fff;
     height: 24px;
@@ -16,9 +20,9 @@
     text-align: center;
     white-space: normal;
     border-radius: 50%;
-    position: absolute;
-    top: -11px;
-    right: -20px;
+    position: relative;
+    top: -18px;
+    right: 12px;
 }
 
 .minicart-wrapper .action.showcart .counter-number {
@@ -35,6 +39,13 @@
     display: inline-block;
 }
 
+.minicart-wrapper .action.showcart {
+    white-space: nowrap;
+    position: relative;
+    top: -7px;
+}
+
+
 .minicart-wrapper .action.showcart.active::before {
     background-image: url('@{baseDir}images/cart.svg') !important;
     background-size: contain;
@@ -42,4 +53,70 @@
     height: 24px;
     content: '';
     display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: @screen__m) {
+
+    .minicart-wrapper .action.showcart {
+        white-space: nowrap;
+        position: relative;
+    }
+
+    .minicart-wrapper .action.showcart .counter.qty {
+        background: #005CFF;
+        color: #fff;
+        height: 24px;
+        line-height: 24px;
+        display: inline-block;
+        margin: 3px 0 0;
+        min-width: 18px;
+        overflow: hidden;
+        padding: 0 3px;
+        text-align: center;
+        white-space: normal;
+        border-radius: 50%;
+        position: absolute;
+        top: -11px;
+        right: -20px;
+    }
+
+    .minicart-wrapper .action.showcart .counter-number {
+        text-shadow: 0 0 0 #000;
+        font-weight: bold;
+    }
+
+    .minicart-wrapper .action.showcart:before {
+        background-image: url('@{baseDir}images/cart.svg');
+        background-size: contain;
+        width: 24px;
+        height: 24px;
+        content: '';
+        display: inline-block;
+    }
+
+    .minicart-wrapper .action.showcart.active::before {
+        background-image: url('@{baseDir}images/cart.svg') !important;
+        background-size: contain;
+        width: 24px;
+        height: 24px;
+        content: '';
+        display: inline-block;
+    }
 }

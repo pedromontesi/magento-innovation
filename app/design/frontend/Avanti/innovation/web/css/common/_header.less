@@ -1,175 +1,174 @@
-//  Common (styles-m.css)
-//  _____________________________________________
-& when (@media-common =true) {
-}
-
-//
-//  Mobile
-//  _____________________________________________
-
-
-.block-search .control {
-    border-top: none !important;
-}
-
-.media-width(@extremum, @break) when
-    (@extremum ="max")
-    and
-    (@break =@screen__m) {
-
-    .header.links {
-        display: none;
-    }
-
+// =======================================
+//  HEADER BASE (Mobile First - default)
+// =======================================
 
     .page-header .panel.wrapper {
-        .lib-css(background-color, @theme__color__primary);
+        border-bottom: 1px solid #005CFF ;
+        background-color: #005CFF !important;
     }
-}
-
-//
-//  Desktop
-//  _____________________________________________
 
 .header.content {
     display: flex;
     flex-wrap: nowrap;
-    padding: 20px 0 0 0 !important;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1300px;
+    padding: 22px 0 112px 0;
+    margin: 0 15px;
     width: auto;
+    justify-content: center;
+    align-items: center;
 }
 
+.block-search .label:before {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 22px;
+    line-height: 28px;
+    color: #757575;
+    content: '';
+
+    background-image: url('@{baseDir}images/search.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    width: 18px;
+    height: 18px;
+
+    margin: 0 10px 0 0;
+    vertical-align: middle;
+    font-weight: normal;
+    overflow: hidden;
+    speak: none;
+    text-align: center;
+    display: table;
+    position: relative;
+    top: -29px;
+    left: 266px;
+}
+
+.page-header .block.block-search {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 15px;
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    max-width: 361px;
+    z-index: 5; /* 🔥 Elevado para garantir que a lupa fique acima do logo */
+}
+
+/* 🔥 Garante que o logo não passe por cima da lupa */
+a.logo img {
+    margin-right: 70px;
+    position: relative;
+    z-index: 1;
+}
+
+.header.links {
+    display: none;
+}
+
+.block-search .label.active + .control input {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+
+.block.block-search {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 15px;
+    position: absolute;
+    width: 100%;
+    max-width: 361px;
+    z-index: 4;
+}
+
+.block-search .control {
+    border-top: none;
+}
 
 ul.header.links:nth-of-type(1)::before {
     display: none !important;
     content: none !important;
 }
 
-.header.links {
-    display: flex;
-    padding: 0;
-    list-style: none;
-    flex-wrap: wrap;
-    gap: 30px;
-    align-items: center;
-    margin: 0 34px 0 0;
-    position: relative;
+// =======================================
+//  DESKTOP (>=768px)
+// =======================================
+@media (min-width: @screen__m) {
 
-}
-
-.header.links::after {
-    content: attr(data-or-text);
-    color: #000;
-    font-weight: 400;
-    font-family: 'Nunito', sans-serif;
-    position: absolute;
-    left: 111px;
-}
-
-
-.header.links .not-logged-in {
-    display: none !important;
-}
-
-.header.links::before {
-    content: '';
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    margin-right: 8px;
-    background-image: url('@{baseDir}images/user.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    top: 4px;
-    left: 39px;
-    position: relative;
-}
-
-
-.header.links:has(.logged-in)::after {
-    content: none !important;
-}
-
-.header.links.logged-in::after {
-    content: attr(data-or-text);
-    display: none;
-    color: #000;
-}
-
-
-ul.header.links {
-    padding: 0;
-}
-
-.media-width(@extremum, @break) when
-    (@extremum ="min")
-    and
-    (@break =@screen__m) {
-    .page-header .panel.wrapper {
-        .lib-css(background-color, @theme__color__primary);
-    }
-    .page-header .header.panel .promo-header-message {
-        .lib-css(text-align, center);
-    }
-    .page-header .header.content .header.links a {
-        .lib-css(color, @theme__color__primary);
+    .page-header .block.block-search {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 15px;
+        position: relative;
+        width: 100%;
+        max-width: 361px;
+        top: 0;
+        z-index: 4;
     }
 
-    .navigation ul {
-        .lib-css(display, flex);
-        .lib-css(justify-content, space-between);
+    .block-search .label.active + .control input {
+        position: static;
     }
-    .custom-featured-section {
-        .lib-css(text-align, center);
-        .lib-css(padding, 30px 0);
 
-        h1 {
-            .lib-css(font-size, 28px);
-            .lib-css(margin-bottom, 20px);
-            .lib-css(color, #000);
-            .lib-css(font-weight, bold);
-        }
-
-        .featured-items {
-            .lib-css(display, flex);
-            .lib-css(justify-content, space-between);
-            // .lib-css(gap, 40px);
-            .lib-css(flex-wrap, wrap);
-
-            .featured-item {
-                .lib-css(text-align, center);
-
-                img {
-                    .lib-css(margin-bottom, 10px);
-                }
-
-                a {
-                    .lib-css(display, block);
-                    .lib-css(font-size, 14px);
-                    .lib-css(color, #000);
-                    .lib-css(text-decoration, none);
-                    .lib-css(text-decoration, none);
-
-                    &:hover {
-                        .lib-css(text-decoration, underline);
-                    }
-                }
-            }
-        }
+    .header.links {
+        display: flex !important;
+        padding: 0;
+        list-style: none;
+        flex-wrap: wrap;
+        gap: 30px;
+        align-items: center;
+        margin: 0 34px 0 0;
+        position: relative;
     }
-    .page-footer {
-        .lib-css(background-color, #F5F5F5);
-        .lib-css(padding, 64px 0);
+
+
+    .minicart-wrapper .action.showcart {
+        white-space: nowrap;
+        position: relative;
+        top: -7px;
     }
-}
 
 
-@media (min-width: 768px), print {
+
+    .header.links::after {
+        content: attr(data-or-text);
+        position: absolute;
+        left: 111px;
+        color: #000;
+        font-weight: 400;
+        font-family: 'Nunito', sans-serif;
+    }
+
+    .header.links::before {
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+        background-image: url('@{baseDir}images/user.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        top: 1px;
+        left: 133px;
+        position: relative;
+    }
+
     .page-header .header.content .header.links a {
         font-weight: 400;
         font-family: 'Nunito', sans-serif;
-        color: #000 !important;
+        color: #000;
+    }
+
+    .header.links:has(.logged-in)::after {
+        content: none !important;
+    }
+
+    .page-header .panel.wrapper {
+        .lib-css(background-color, @theme__color__primary);
+    }
+
+    .page-header .header.panel .promo-header-message {
+        .lib-css(text-align, center);
     }
 }
