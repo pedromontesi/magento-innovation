@@ -4,13 +4,18 @@
 <ul class="header links" data-or-text="<?= __('or') ?>">
 
     <ul class="header links" data-bind="scope: 'customer'">
-        <!-- ko if: customer().fullname -->
-        <li class="greet welcome">
-            <span class="logged-in" data-bind="text: 'Bem-vindo, ' + customer().fullname + '!'"></span>
-        </li>
-        <!-- /ko -->
+        <li class="greet welcome" style="display: flex; align-items: center;">
+
+            <img src="<?= $block->getViewFileUrl('images/user.svg') ?>"
+                 alt="User Icon"
+                 class="welcome-icon"
+                 height="20"
+                 width="20"
+                 style="margin-right: 5px;">
+
+            <span class="logged-in" data-bind="text: 'Bem-vindo, ' + customer().fullname + '!'"></span></li>
     </ul>
 
-    <?= $block->getChildHtml() ?> <!-- Entrar / Criar conta -->
+    <?= $block->getChildHtml() ?>
 
 </ul>

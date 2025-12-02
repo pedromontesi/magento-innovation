@@ -23,6 +23,15 @@
         <move element="minicart" destination="header-wrapper" after="-"/>
         <move element="header.links" destination="header-wrapper" before="minicart"/>
 
+        <!-- Adiciona separador "or" entre Login e Criar Conta -->
+        <referenceBlock name="header.links">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="header.or.separator"
+                   template="Magento_Theme::html/or.phtml"
+                   after="authorization-link-login"
+                   before="register-link"/>
+        </referenceBlock>
+
         <!-- Alterar o logo -->
         <referenceBlock name="logo">
             <arguments>

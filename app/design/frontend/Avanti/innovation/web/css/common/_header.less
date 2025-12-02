@@ -1,11 +1,11 @@
-// =======================================
-//  HEADER BASE (Mobile First - default)
-// =======================================
 
-    .page-header .panel.wrapper {
-        border-bottom: 1px solid #005CFF ;
-        background-color: #005CFF !important;
-    }
+//  HEADER BASE (Mobile First - default)
+
+
+.page-header .panel.wrapper {
+    border-bottom: 1px solid #005CFF ;
+    background-color: #005CFF !important;
+}
 
 .header.content {
     display: flex;
@@ -52,10 +52,10 @@
     width: 100%;
     top: 50px;
     max-width: 361px;
-    z-index: 5; /* 🔥 Elevado para garantir que a lupa fique acima do logo */
+    z-index: 5; /* Elevado para garantir que a lupa fique acima do logo */
 }
 
-/* 🔥 Garante que o logo não passe por cima da lupa */
+/* Garante que o logo não passe por cima da lupa */
 a.logo img {
     margin-right: 70px;
     position: relative;
@@ -116,9 +116,8 @@ ul.header.links:nth-of-type(1)::before {
         padding: 0;
         list-style: none;
         flex-wrap: wrap;
-        gap: 30px;
         align-items: center;
-        margin: 0 34px 0 0;
+        margin: 0 0 0 0;
         position: relative;
     }
 
@@ -128,6 +127,31 @@ ul.header.links:nth-of-type(1)::before {
         position: relative;
         top: -7px;
     }
+
+    li.link.authorization-link {
+        margin-right: 6px;
+    }
+
+
+    .customer-welcome .action.switch::after {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 10px;
+        line-height: 22px;
+        color: inherit;
+        content: '\e622';
+        font-family: 'luma-icons';
+        margin: 0;
+        vertical-align: top;
+        display: block;
+        font-weight: normal;
+        overflow: hidden;
+        speak: none;
+        text-align: center;
+        color: black !important;
+    }
+
+
 
 
 
@@ -140,19 +164,7 @@ ul.header.links:nth-of-type(1)::before {
         font-family: 'Nunito', sans-serif;
     }
 
-    .header.links::before {
-        content: '';
-        display: inline-block;
-        width: 24px;
-        height: 24px;
-        margin-right: 8px;
-        background-image: url('@{baseDir}images/user.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
-        top: 1px;
-        left: 133px;
-        position: relative;
-    }
+
 
     .page-header .header.content .header.links a {
         font-weight: 400;
@@ -171,4 +183,24 @@ ul.header.links:nth-of-type(1)::before {
     .page-header .header.panel .promo-header-message {
         .lib-css(text-align, center);
     }
+}
+
+
+.customer-welcome .customer-name {
+    cursor: pointer;
+    padding: 4px;
+}
+
+
+.level0.nav-1.level-top.ui-menu-item > a::before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 10px;
+    margin-right: 8px;
+    margin-bottom: 4px;
+    vertical-align: middle;
+    background-image: url('@{baseDir}images/burguer_menu.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
 }
