@@ -111,6 +111,11 @@ input[type="text"] {
     border: 1px solid #DDDDDD;
 }
 
+input[type="text"]::placeholder {
+    color: #000 !important;
+}
+
+
 
 
 .or-separator {
@@ -147,6 +152,22 @@ margin-right: 6px;
         border-style: none !important;
         font-weight: bold !important;
     }
+
+    .block-search .action.search {
+        content: "";
+        background-image: url('@{baseDir}images/search.svg') !important;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 19px;
+        height: 19px;
+        margin: 16px 6px 0 0 !important;
+        display: inline-block;
+    }
+
+    .block-search .action.search::before {
+        display: none !important;
+    }
+
 
     // Oculta ícone de submenu no desktop
     .navigation .level0.parent > .level-top > .ui-menu-icon {

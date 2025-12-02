@@ -2,10 +2,13 @@
 //  PROMO BAR (Mobile First)
 // =======================================
 .promo-bar {
-    display: flex;
+    display: flex;                // já estava, mantido
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;              // garante boa adaptação no mobile
     font-weight: 700;
+    padding: 6px 10px;            // igual ao desktop para consistência
+    text-align: center;           // melhora no mobile
 }
 
 .promo-highlight {
@@ -38,7 +41,7 @@
 // =======================================
 .block-search input {
     font-size: 16px;
-    padding: 0 24px 0 !important;
+    padding: 24px !important;
 }
 
 // =========================
@@ -62,6 +65,16 @@ button.action.search {
 //  DESKTOP (min-width)
 // =========================
 @media (min-width: @screen__m) {
+
+    // PROMO BAR — mantém exatamente o mesmo estilo
+    .promo-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        padding: 4px 0;      // mesmo valor aplicado no mobile acima
+    }
+
     .logo {
         margin: 0 3.125rem 0 0 !important;
     }
@@ -70,6 +83,7 @@ button.action.search {
         width: 594px;
         padding-right: 13.1875rem;
     }
+
     .block-search .block-content {
         margin-bottom: 0;
         width: 594px;

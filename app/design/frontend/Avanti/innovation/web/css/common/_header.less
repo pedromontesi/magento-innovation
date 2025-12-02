@@ -1,61 +1,76 @@
-
 //  HEADER BASE (Mobile First - default)
 
+.page-header {
+    .panel {
+        &.wrapper {
+            border-bottom: 1px solid #005CFF;
+            .lib-css(background-color, #005CFF, 1) !important;
+        }
+    }
 
-.page-header .panel.wrapper {
-    border-bottom: 1px solid #005CFF ;
-    background-color: #005CFF !important;
+    /* Promo sempre azul no mobile */
+    .header.panel {
+        .promo-header-message {
+            .lib-css(background-color, #005CFF, 1);
+        }
+    }
 }
 
-.header.content {
-    display: flex;
-    flex-wrap: nowrap;
-    padding: 22px 0 112px 0;
-    margin: 0 15px;
-    width: auto;
-    justify-content: center;
-    align-items: center;
+.header {
+    &.content {
+        display: flex;
+        flex-wrap: nowrap;
+        padding: 22px 0 112px 0;
+        margin: 0 15px;
+        width: auto;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
-.block-search .label:before {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 22px;
-    line-height: 28px;
-    color: #757575;
-    content: '';
+/* Ícone da lupa */
+.block-search {
+    .label {
+        &:before {
+            .lib-css(font-size, 22px);
+            .lib-css(line-height, 28px);
+            color: #757575;
 
-    background-image: url('@{baseDir}images/search.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
+            content: '';
+            background-image: url('@{baseDir}images/search.svg');
+            .lib-css(background-size, contain);
+            .lib-css(background-repeat, no-repeat);
 
-    width: 18px;
-    height: 18px;
+            .lib-css(width, 22px);
+            .lib-css(height, 22px);
 
-    margin: 0 10px 0 0;
-    vertical-align: middle;
-    font-weight: normal;
-    overflow: hidden;
-    speak: none;
-    text-align: center;
-    display: table;
-    position: relative;
-    top: -29px;
-    left: 266px;
+            margin: 0;
+            display: block;
+            cursor: pointer;
+        }
+    }
+
+    .label {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        cursor: pointer;
+        padding: 10px 15px;
+    }
+
+    .label.active + .control input {
+        position: absolute;
+        top: 5px;
+        left: 20px;
+    }
+
+    .control {
+        border-top: none;
+    }
 }
 
-.page-header .block.block-search {
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 15px;
-    position: absolute;
-    width: 100%;
-    top: 50px;
-    max-width: 361px;
-    z-index: 5; /* Elevado para garantir que a lupa fique acima do logo */
-}
-
-/* Garante que o logo não passe por cima da lupa */
+/* Logo acima da lupa */
 a.logo img {
     margin-right: 70px;
     position: relative;
@@ -66,12 +81,7 @@ a.logo img {
     display: none;
 }
 
-.block-search .label.active + .control input {
-    position: absolute;
-    top: 5px;
-    left: 20px;
-}
-
+/* Container geral da busca */
 .block.block-search {
     display: flex;
     flex-wrap: wrap;
@@ -82,19 +92,20 @@ a.logo img {
     z-index: 4;
 }
 
-.block-search .control {
-    border-top: none;
-}
-
-ul.header.links:nth-of-type(1)::before {
-    display: none !important;
-    content: none !important;
-}
-
 // =======================================
 //  DESKTOP (>=768px)
 // =======================================
+
 @media (min-width: @screen__m) {
+
+    /* Promo sempre azul também no desktop */
+    .page-header {
+        .header.panel {
+            .promo-header-message {
+                .lib-css(background-color, #005CFF, 1);
+            }
+        }
+    }
 
     .page-header .block.block-search {
         display: flex;
@@ -102,7 +113,7 @@ ul.header.links:nth-of-type(1)::before {
         padding-left: 15px;
         position: relative;
         width: 100%;
-        max-width: 361px;
+        max-width: 594px;
         top: 0;
         z-index: 4;
     }
@@ -117,10 +128,9 @@ ul.header.links:nth-of-type(1)::before {
         list-style: none;
         flex-wrap: wrap;
         align-items: center;
-        margin: 0 0 0 0;
+        margin: 0;
         position: relative;
     }
-
 
     .minicart-wrapper .action.showcart {
         white-space: nowrap;
@@ -132,28 +142,25 @@ ul.header.links:nth-of-type(1)::before {
         margin-right: 6px;
     }
 
+    .customer-welcome .action.switch {
+        &::after {
+            .lib-css(font-size, 10px);
+            .lib-css(line-height, 22px);
 
-    .customer-welcome .action.switch::after {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        font-size: 10px;
-        line-height: 22px;
-        color: inherit;
-        content: '\e622';
-        font-family: 'luma-icons';
-        margin: 0;
-        vertical-align: top;
-        display: block;
-        font-weight: normal;
-        overflow: hidden;
-        speak: none;
-        text-align: center;
-        color: black !important;
+            color: inherit;
+            content: '\e622';
+            font-family: 'luma-icons';
+
+            margin: 0;
+            vertical-align: top;
+            display: block;
+            font-weight: normal;
+            overflow: hidden;
+            speak: none;
+            text-align: center;
+            color: black !important;
+        }
     }
-
-
-
-
 
     .header.links::after {
         content: attr(data-or-text);
@@ -163,8 +170,6 @@ ul.header.links:nth-of-type(1)::before {
         font-weight: 400;
         font-family: 'Nunito', sans-serif;
     }
-
-
 
     .page-header .header.content .header.links a {
         font-weight: 400;
@@ -185,12 +190,10 @@ ul.header.links:nth-of-type(1)::before {
     }
 }
 
-
 .customer-welcome .customer-name {
     cursor: pointer;
     padding: 4px;
 }
-
 
 .level0.nav-1.level-top.ui-menu-item > a::before {
     content: "";
@@ -201,6 +204,6 @@ ul.header.links:nth-of-type(1)::before {
     margin-bottom: 4px;
     vertical-align: middle;
     background-image: url('@{baseDir}images/burguer_menu.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
+    .lib-css(background-repeat, no-repeat);
+    .lib-css(background-size, contain);
 }
