@@ -13,7 +13,7 @@
             </container>
         </referenceContainer>
 
-        <!-- Remove Default Welcome Message (sem quebrar layout) -->
+        <!-- Remove Default Welcome Message -->
         <referenceBlock name="header.container">
             <referenceBlock name="welcome" remove="true"/>
         </referenceBlock>
@@ -32,7 +32,7 @@
                    before="register-link"/>
         </referenceBlock>
 
-        <!-- Alterar o logo -->
+        <!-- Altera o logo -->
         <referenceBlock name="logo">
             <arguments>
                 <argument name="logo_file" xsi:type="string">images/logo.svg</argument>
@@ -42,7 +42,34 @@
             </arguments>
         </referenceBlock>
 
+
+        <!-- cria um container dentro do main content para adicionar a newsletter  -->
+        <referenceContainer name="main.content">
+            <container name="footer.newsletter"
+                       label="Footer Columns Wrapper"
+                       htmlTag="div"
+                       htmlClass="footer-columns-wrapper"/>
+        </referenceContainer>
+
+        <!-- move a newsletter para o container criado -->
+        <move element="form.subscribe" destination="footer.newsletter" before="-"/>
+
+
+
         <!-- Remover o skip_to_content -->
         <referenceBlock name="skip_to_content" remove="true"/>
+
+
+        <!-- Footer -->
+        <referenceBlock name="footer_links" remove="true"/>
+
+        <referenceContainer name="footer">
+            <block class="Magento\Cms\Block\Block" name="footer_row_1">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer_row_1</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
     </body>
 </page>

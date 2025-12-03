@@ -1,14 +1,14 @@
-// =======================================
+
 //  PROMO BAR (Mobile First)
-// =======================================
+
 .promo-bar {
-    display: flex;                // já estava, mantido
+    display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;              // garante boa adaptação no mobile
+    flex-wrap: wrap;
     font-weight: 700;
-    padding: 6px 10px;            // igual ao desktop para consistência
-    text-align: center;           // melhora no mobile
+    padding: 6px 10px;
+    text-align: center;
 }
 
 .promo-highlight {
@@ -18,9 +18,9 @@
     border-radius: 4px;
 }
 
-// =======================================
+
 //  LOGIN LINK (com ícone)
-// =======================================
+
 .login-link {
     display: inline-flex;
     align-items: center;
@@ -36,9 +36,9 @@
     background-size: contain;
 }
 
-// =======================================
+
 //  SEARCH FIELD (Mobile First)
-// =======================================
+
 .block-search input {
     font-size: 16px;
     padding: 24px !important;
@@ -66,13 +66,13 @@ button.action.search {
 // =========================
 @media (min-width: @screen__m) {
 
-    // PROMO BAR — mantém exatamente o mesmo estilo
+
     .promo-bar {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-wrap: nowrap;
-        padding: 4px 0;      // mesmo valor aplicado no mobile acima
+        padding: 4px 0;
     }
 
     .logo {
