@@ -1,29 +1,60 @@
+[data-content-type="divider"] {
+    display: contents;
+}
+
 .footer-wrap {
     display: flex;
     flex-wrap: wrap;
+}
 
+.social-media-footer {
+    margin: 40px 0 48px 0;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment-method-footer {
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
 }
 
 .title-accordion {
     align-items: center;
     justify-content: space-between;
-
 }
 
 .title-accordion h5 {
     margin: 0 0 0 16px;
+    color: #000;
+    font-weight: 700;
+    font-size: 12px;
 }
 
-
+.footer-content p {
+    margin: 11px 0 0 16px;
+    color: #303030;
+    font-weight: 400;
+}
 
 .footer-content {
     display: none;
-
 }
 
 .is-open {
-    display: block;
+    display: block !important;
 }
 
+@media (min-width: 769px) {
+    .footer-content {
+        display: block !important;
+    }
+
+    #accordion-1, #accordion-2, #accordion-3 {
+        display: none;
+    }
 
 
+
+}

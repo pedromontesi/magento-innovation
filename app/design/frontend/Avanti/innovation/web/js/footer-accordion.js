@@ -1,24 +1,45 @@
-const firstAccordion = $('#accordion-1');
-// const firstFooterContent = $('');
+define([
+    'jquery',
+    'matchMedia'
+], function ($, mediaCheck) {
+    'use strict';
 
-firstAccordion.on('click', function () {
-   // firstFooterContent.toggleClass('is-open');
-});
+    $(function () {
 
+        // Mobile-first (768px)
+        function enableMobileAccordion() {
+            $('#accordion-1').off('click').on('click', function () {
+                $('.footer-content-1').toggleClass('is-open');
+            });
 
+            $('#accordion-2').off('click').on('click', function () {
+                $('.footer-content-2').toggleClass('is-open');
+            });
 
-const secondAccordion = $('#accordion-2');
-// const secondFooterContent = $('');
+            $('#accordion-3').off('click').on('click', function () {
+                $('.footer-content-3').toggleClass('is-open');
+            });
+        }
 
-secondAccordion.on('click', function () {
-   //  secondAccordion.toggleClass('is-open');
-});
+        enableMobileAccordion(); // padrão mobile
 
+        // Desktop (>= 769px)
+        mediaCheck({
+            media: '(min-width: 769px)',
 
+            entry: function () {
+                $('.footer-content-1, .footer-content-2, .footer-content-3')
+                    .addClass('is-open');
+            },
 
-const thirdAccordion = $('#accordion-3');
-// const thirdFooterContent = $('');
+            exit: function () {
+                $('.footer-content-1, .footer-content-2, .footer-content-3')
+                    .removeClass('is-open');
 
-thirdAccordion.on('click', function () {
-    //  thirdAccordion.toggleClass('is-open');
+                enableMobileAccordion();
+            }
+        });
+
+    });
+
 });

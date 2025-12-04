@@ -1,7 +1,7 @@
 var config = {
     map: {
         '*': {
-            footerAccordion: 'Magento_Theme/js/footer-accordion'
+            footerAccordion: 'js/footer-accordion'
         }
     },
     deps: [

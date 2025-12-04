@@ -54,7 +54,8 @@
         <!-- move a newsletter para o container criado -->
         <move element="form.subscribe" destination="footer.newsletter" before="-"/>
 
-
+        <!-- Remover o copyright -->
+        <referenceBlock name="copyright" remove="true" />
 
         <!-- Remover o skip_to_content -->
         <referenceBlock name="skip_to_content" remove="true"/>
