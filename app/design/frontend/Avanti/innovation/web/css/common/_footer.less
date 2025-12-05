@@ -1,3 +1,20 @@
+// COMMON
+
+* {
+    box-sizing: border-box;
+}
+
+.copyright-container span {
+    color: #303030;
+    text-align: center;
+
+}
+
+
+
+
+// Mobile
+
 [data-content-type="divider"] {
     display: contents;
 }
@@ -15,6 +32,7 @@
 }
 
 .payment-method-footer {
+    margin: 48px 0 40px 0;
     gap: 32px;
     justify-content: center;
     align-items: center;
@@ -26,10 +44,10 @@
 }
 
 .title-accordion h5 {
-    margin: 0 0 0 16px;
+    margin: 16px 0 0 16px;
     color: #000;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .footer-content p {
@@ -46,13 +64,54 @@
     display: block !important;
 }
 
+
+
 @media (min-width: 769px) {
+
+    [data-content-type="divider"] {
+        display: contents;
+    }
+
+    .hide-divider-desktop {
+        display: none;
+    }
+
+
+
+    .desktop-column-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 8.75rem;
+        flex-direction: row !important;
+
+    }
+
+
+    .desktop-flex {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+
     .footer-content {
         display: block !important;
     }
 
-    #accordion-1, #accordion-2, #accordion-3 {
+    #accordion-1,
+    #accordion-2,
+    #accordion-3 {
         display: none;
+    }
+
+    .title-accordion h5 {
+        margin: 16px 0 0 16px;
+        color: #000;
+        font-weight: 700;
+        font-size: 14px;
     }
 
 

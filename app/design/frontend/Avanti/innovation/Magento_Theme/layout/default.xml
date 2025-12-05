@@ -3,6 +3,7 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 
     <body>
+
         <!-- Adiciona o bloco promo no header -->
         <referenceContainer name="header.panel">
             <container name="promo.header.wrapper" htmlClass="promo-wrapper" htmlTag="div">
@@ -42,8 +43,7 @@
             </arguments>
         </referenceBlock>
 
-
-        <!-- cria um container dentro do main content para adicionar a newsletter  -->
+        <!-- cria um container dentro do main content para adicionar a newsletter -->
         <referenceContainer name="main.content">
             <container name="footer.newsletter"
                        label="Footer Columns Wrapper"
@@ -60,16 +60,26 @@
         <!-- Remover o skip_to_content -->
         <referenceBlock name="skip_to_content" remove="true"/>
 
-
-        <!-- Footer -->
+        <!-- Remover os footer links -->
         <referenceBlock name="footer_links" remove="true"/>
 
+        <!-- Footer customizado -->
         <referenceContainer name="footer">
+
+            <!-- Footer Row 1 -->
             <block class="Magento\Cms\Block\Block" name="footer_row_1">
                 <arguments>
                     <argument name="block_id" xsi:type="string">footer_row_1</argument>
                 </arguments>
             </block>
+
+            <!-- Copyright via Page Builder -->
+            <block class="Magento\Cms\Block\Block" name="footer_copyright_block">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer_copyright_block</argument>
+                </arguments>
+            </block>
+
         </referenceContainer>
 
     </body>
