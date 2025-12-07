@@ -28,28 +28,6 @@
     }
 }
 
-/* Ícone da lupa */
-.block-search {
-    .label {
-        &:before {
-            .lib-css(font-size, 22px);
-            .lib-css(line-height, 28px);
-            color: #757575;
-
-            content: '';
-            background-image: url('@{baseDir}images/search.svg');
-            .lib-css(background-size, contain);
-            .lib-css(background-repeat, no-repeat);
-
-            .lib-css(width, 22px);
-            .lib-css(height, 22px);
-
-            margin: 0;
-            display: block;
-            cursor: pointer;
-        }
-    }
-
     .label {
         display: flex;
         align-items: center;
@@ -68,14 +46,6 @@
     .control {
         border-top: none;
     }
-}
-
-/* Logo acima da lupa */
-a.logo img {
-    margin-right: 70px;
-    position: relative;
-    z-index: 1;
-}
 
 .header.links {
     display: none;
@@ -92,11 +62,23 @@ a.logo img {
     z-index: 4;
 }
 
-// =======================================
+
 //  DESKTOP (>=768px)
-// =======================================
+
 
 @media (min-width: @screen__m) {
+
+
+    // ver isso amanhã
+    #search_mini_form {
+        width: 594px;
+    }
+
+    .header.content {
+        display: flex;
+        justify-content: space-between;
+    }
+
 
     /* Promo sempre azul também no desktop */
     .page-header {
@@ -115,7 +97,6 @@ a.logo img {
         width: 100%;
         max-width: 594px;
         top: 0;
-        z-index: 4;
     }
 
     .block-search .label.active + .control input {

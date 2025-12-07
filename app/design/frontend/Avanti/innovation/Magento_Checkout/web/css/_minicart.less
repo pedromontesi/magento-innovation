@@ -1,24 +1,17 @@
 /* =======================================
    CARRINHO — MOBILE (<=767px)
-   Estilo semelhante ao botão de busca
+   Apenas ícone + badge
 ======================================= */
 
 .minicart-wrapper {
-    position: absolute;
-    right: 15px;
-    top: 18px;
-    z-index: 5;
+    // sem position no mobile
 }
 
 .minicart-wrapper .action.showcart {
-    display: block;
-    white-space: nowrap;
-    position: relative;
-    padding: 10px;
-    margin: 0;
+    display: inline-flex;
+    align-items: center;
     cursor: pointer;
 
-    /* Ícone */
     &:before {
         background-image: url('@{baseDir}images/cart.svg');
         background-size: contain;
@@ -27,34 +20,32 @@
         height: 26px;
         content: '';
         display: inline-block;
+        margin-right: 4px;
     }
 }
 
-/* Badge de contagem no mobile */
 .minicart-wrapper .action.showcart .counter.qty {
     background: #005CFF;
     color: #fff;
     height: 21px;
     line-height: 21px;
-    display: inline-block;
     min-width: 18px;
     padding: 0 4px;
+    display: inline-block;
     text-align: center;
     border-radius: 50%;
-    position: absolute;
-    top: -8px;
-    right: -5px;
+    position: relative;
 }
 
 .minicart-wrapper .action.showcart .counter-number {
-    text-shadow: 0 0 0 #000;
+    text-shadow: none;
     font-weight: bold;
 }
 
-/* Estado ativo mantém o mesmo ícone */
 .minicart-wrapper .action.showcart.active::before {
     background-image: url('@{baseDir}images/cart.svg') !important;
 }
+
 
 
 /* =======================================
@@ -64,23 +55,24 @@
 @media (min-width: @screen__m) {
 
     .minicart-wrapper {
-        position: relative;
-        right: 0;
-        top: 0;
-        z-index: 1;
+        display: inline-flex;
+        align-items: center;
     }
 
     .minicart-wrapper .action.showcart {
         white-space: nowrap;
-        position: relative;
+        display: inline-flex;
+        align-items: center;
 
         &:before {
             background-image: url('@{baseDir}images/cart.svg');
             background-size: contain;
+            background-repeat: no-repeat;
             width: 24px;
             height: 24px;
             content: '';
             display: inline-block;
+            margin-right: 4px;
         }
     }
 
@@ -93,13 +85,10 @@
         padding: 0 3px;
         text-align: center;
         border-radius: 50%;
-        position: absolute;
-        top: -7px;
-        right: -6px;
     }
 
     .minicart-wrapper .action.showcart .counter-number {
-        text-shadow: 0 0 0 #000;
+        text-shadow: none;
         font-weight: bold;
     }
 }

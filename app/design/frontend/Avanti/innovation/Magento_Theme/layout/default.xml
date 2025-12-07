@@ -4,7 +4,6 @@
 
     <body>
 
-        <!-- Adiciona o bloco promo no header -->
         <referenceContainer name="header.panel">
             <container name="promo.header.wrapper" htmlClass="promo-wrapper" htmlTag="div">
                 <block class="Magento\Framework\View\Element\Template"
@@ -14,17 +13,14 @@
             </container>
         </referenceContainer>
 
-        <!-- Remove Default Welcome Message -->
         <referenceBlock name="header.container">
             <referenceBlock name="welcome" remove="true"/>
         </referenceBlock>
 
-        <!-- Move header.links para próximo do carrinho -->
         <move element="header.links" destination="header.content"/>
         <move element="minicart" destination="header-wrapper" after="-"/>
         <move element="header.links" destination="header-wrapper" before="minicart"/>
 
-        <!-- Adiciona separador "or" entre Login e Criar Conta -->
         <referenceBlock name="header.links">
             <block class="Magento\Framework\View\Element\Template"
                    name="header.or.separator"
@@ -33,7 +29,6 @@
                    before="register-link"/>
         </referenceBlock>
 
-        <!-- Altera o logo -->
         <referenceBlock name="logo">
             <arguments>
                 <argument name="logo_file" xsi:type="string">images/logo.svg</argument>
@@ -43,7 +38,6 @@
             </arguments>
         </referenceBlock>
 
-        <!-- cria um container dentro do main content para adicionar a newsletter -->
         <referenceContainer name="main.content">
             <container name="footer.newsletter"
                        label="Footer Columns Wrapper"
@@ -51,35 +45,26 @@
                        htmlClass="footer-columns-wrapper"/>
         </referenceContainer>
 
-        <!-- move a newsletter para o container criado -->
         <move element="form.subscribe" destination="footer.newsletter" before="-"/>
 
-        <!-- Remover o copyright -->
         <referenceBlock name="copyright" remove="true" />
-
-        <!-- Remover o skip_to_content -->
         <referenceBlock name="skip_to_content" remove="true"/>
-
-        <!-- Remover os footer links -->
         <referenceBlock name="footer_links" remove="true"/>
 
-        <!-- Footer customizado -->
         <referenceContainer name="footer">
-
-            <!-- Footer Row 1 -->
             <block class="Magento\Cms\Block\Block" name="footer_row_1">
                 <arguments>
                     <argument name="block_id" xsi:type="string">footer_row_1</argument>
                 </arguments>
             </block>
+        </referenceContainer>
 
-            <!-- Copyright via Page Builder -->
+        <referenceContainer name="before.body.end">
             <block class="Magento\Cms\Block\Block" name="footer_copyright_block">
                 <arguments>
                     <argument name="block_id" xsi:type="string">footer_copyright_block</argument>
                 </arguments>
             </block>
-
         </referenceContainer>
 
     </body>

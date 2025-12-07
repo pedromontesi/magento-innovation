@@ -6,35 +6,43 @@ define([
 
     $(function () {
 
-        // Mobile-first (768px)
+        function toggleAccordion(button, content) {
+            $(content).toggleClass('is-open');
+            $(button).toggleClass('is-rotated');
+        }
+
         function enableMobileAccordion() {
             $('#accordion-1').off('click').on('click', function () {
-                $('.footer-content-1').toggleClass('is-open');
+                toggleAccordion('#accordion-1', '.footer-content-1');
             });
 
             $('#accordion-2').off('click').on('click', function () {
-                $('.footer-content-2').toggleClass('is-open');
+                toggleAccordion('#accordion-2', '.footer-content-2');
             });
 
             $('#accordion-3').off('click').on('click', function () {
-                $('.footer-content-3').toggleClass('is-open');
+                toggleAccordion('#accordion-3', '.footer-content-3');
             });
         }
 
-        enableMobileAccordion(); // padrão mobile
+        enableMobileAccordion();
 
-        // Desktop (>= 769px)
         mediaCheck({
             media: '(min-width: 769px)',
 
             entry: function () {
                 $('.footer-content-1, .footer-content-2, .footer-content-3')
                     .addClass('is-open');
+
+                // ícones somem no desktop → garante reset
+                $('#accordion-1, #accordion-2, #accordion-3').removeClass('is-rotated');
             },
 
             exit: function () {
                 $('.footer-content-1, .footer-content-2, .footer-content-3')
                     .removeClass('is-open');
+
+                $('#accordion-1, #accordion-2, #accordion-3').removeClass('is-rotated');
 
                 enableMobileAccordion();
             }
