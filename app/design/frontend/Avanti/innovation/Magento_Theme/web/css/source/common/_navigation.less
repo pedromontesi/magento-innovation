@@ -1,0 +1,88 @@
+//  Common (styles-m.css)
+//  _____________________________________________
+& when (@media-common =true) {
+    .sections.nav-sections {
+        .lib-css(background, white);
+
+        .navigation {
+            .lib-css(background, white);
+
+            .ui-menu-icon {
+                .lib-css(display, none);
+            }
+        }
+
+        // Links de menu dropdown
+        .ui-menu.ui-widget.ui-widget-content {
+            li a {
+                .lib-css(color, #000);
+                .lib-css(font-weight, 400);
+                .lib-css(font-size, 14px);
+            }
+        }
+    }
+}
+
+//  Desktop
+.media-width(@extremum, @break)
+    when
+    (@extremum ="min")
+    and
+    (@break =@screen__m) {
+    .sections.nav-sections {
+        .lib-css(box-shadow, 0 3px 6px rgba(0, 0, 0, 0.15));
+
+        #ui-id-2 span {
+            .lib-css(display, flex);
+            .lib-css(justify-content, center);
+            .lib-css(align-items, center);
+            .lib-css(font-weight, 700);
+            .lib-css(gap, 8px);
+
+            &::before {
+                .lib-css(content, """");
+                .lib-css(display, block);
+                .lib-css(width, 14px);
+                .lib-css(height, 14px);
+                .lib-css(font-weight, 600);
+                .lib-css(background-image, url("@{baseDir}images/menu-desktop.svg"));
+                .lib-css(background-repeat, no-repeat);
+                .lib-css(background-size, contain);
+                .lib-css(background-position, center);
+            }
+        }
+    }
+
+    .navigation ul {
+        .lib-css(display, flex);
+        .lib-css(justify-content, space-between);
+    }
+}
+
+//  Mobile
+.media-width(@extremum, @break)
+    when
+    (@extremum = "max")
+    and
+    (@break = @screen__m) {
+    .action.nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .lib-css(height, 100%);
+        .lib-css(width, 30px);
+        margin: 0;
+        top: 12px;
+    }
+
+    .action.nav-toggle::before {
+        content: """";
+        display: block;
+        width: 24px;
+        height: 22px;
+        background-image: url("@{baseDir}images/menu-mobile.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+}

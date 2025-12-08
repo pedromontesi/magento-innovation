@@ -1,42 +1,39 @@
-<?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-
     <body>
 
+
         <referenceContainer name="header.panel">
+
+
             <container name="promo.header.wrapper" htmlClass="promo-wrapper" htmlTag="div">
-                <block class="Magento\Framework\View\Element\Template"
-                       name="promo.header.panel"
-                       template="Magento_Theme::html/promo.phtml"
-                       before="-"/>
+
+
+                <block class="Magento\Framework\View\Element\Template" name="promo.header.panel"
+                       template="Magento_Theme::html/promo.phtml" before="-"/>
+
             </container>
+
         </referenceContainer>
 
-        <referenceBlock name="header.container">
-            <referenceBlock name="welcome" remove="true"/>
-        </referenceBlock>
-
-        <move element="header.links" destination="header.content"/>
-        <move element="minicart" destination="header-wrapper" after="-"/>
         <move element="header.links" destination="header-wrapper" before="minicart"/>
 
+        <move element="minicart" destination="header-wrapper" after="-"/>
+
         <referenceBlock name="header.links">
-            <block class="Magento\Framework\View\Element\Template"
-                   name="header.or.separator"
-                   template="Magento_Theme::html/or.phtml"
-                   after="authorization-link-login"
-                   before="register-link"/>
+            <block class="Magento\Framework\View\Element\Template" name="header.links.or"
+                   template="Magento_Theme::html/or.phtml" after="authorization-link"/>
         </referenceBlock>
 
         <referenceBlock name="logo">
             <arguments>
-                <argument name="logo_file" xsi:type="string">images/logo.svg</argument>
-                <argument name="logo_width" xsi:type="number">152</argument>
-                <argument name="logo_height" xsi:type="number">27</argument>
-                <argument name="logo_alt" xsi:type="string">avanti-logo</argument>
+                <argument name="logo_file" xsi:type="string">images/avanti-logo.svg</argument>
+                <argument name="logo_width" xsi:type="number">152.58</argument>
+                <argument name="logo_height" xsi:type="number">27.08</argument>
+                <argument name="logo_alt" xsi:type="string">Avanti Logo</argument>
             </arguments>
         </referenceBlock>
+
 
         <referenceContainer name="main.content">
             <container name="footer.newsletter"
@@ -47,7 +44,7 @@
 
         <move element="form.subscribe" destination="footer.newsletter" before="-"/>
 
-        <referenceBlock name="copyright" remove="true" />
+        <referenceBlock name="copyright" remove="true"/>
         <referenceBlock name="skip_to_content" remove="true"/>
         <referenceBlock name="footer_links" remove="true"/>
 
@@ -66,6 +63,7 @@
                 </arguments>
             </block>
         </referenceContainer>
+
 
     </body>
 </page>

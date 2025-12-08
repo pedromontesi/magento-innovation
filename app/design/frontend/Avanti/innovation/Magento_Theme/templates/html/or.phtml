@@ -1,14 +1,30 @@
 <?php
-/** @var \Magento\Framework\View\Element\Template $block */
+/**
+* Copyright © Magento, Inc. All rights reserved.
+* See COPYING.txt for license details.
+*/
+?>
+<?php
+// phpcs:disable Magento2.Templates.ThisInTemplate.FoundThis
 
-$customerSession = $block->getLayout()
-    ->getBlock('customer.session');
 
-if (!$customerSession) {
-    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-    $customerSession = $objectManager->get(\Magento\Customer\Model\Session::class);
-}
+/**
+* Category view template
+*
+* @var $block \Magento\Framework\View\Element\Template
+*/
 
+
+?>
+
+<?php
+/** @var \Magento\Customer\Model\Session $customerSession */
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$customerSession = $objectManager->get(\Magento\Customer\Model\Session::class);
+
+// se o usuário não estiver logado mostra a string "ou"
 if (!$customerSession->isLoggedIn()): ?>
-    <span class="or-separator"><?= __('or') ?></span>
+    <li class="header-links-or">
+        <?= __('ou') ?>
+    </li>
 <?php endif; ?>

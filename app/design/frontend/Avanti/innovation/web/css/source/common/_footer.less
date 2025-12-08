@@ -5,16 +5,8 @@
 }
 
 hr {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
 }
-
-
-
-.footer.content {
-    border-top: none;
-}
-
 
 .accordion {
     transition: transform .35s ease;
@@ -26,11 +18,12 @@ hr {
 }
 
 
-.copyright-container span {
-    display: inline-block;
-    margin-left: 16px;
-    margin-right: 16px;
+.copyright-content {
     color: #303030;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
     text-align: center;
 
 }
@@ -91,14 +84,13 @@ hr {
 @media (min-width: 769px) {
 
     .logo-footer {
-        padding-right: 43px;
+        padding-right: 3.7rem;
     }
 
-
-    .copyright-container span {
+    .copyright-content {
         max-width: 1074px;
-    }
 
+    }
 
 
     [data-content-type="divider"] {

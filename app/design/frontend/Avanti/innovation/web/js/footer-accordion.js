@@ -34,7 +34,7 @@ define([
                 $('.footer-content-1, .footer-content-2, .footer-content-3')
                     .addClass('is-open');
 
-                // ícones somem no desktop → garante reset
+
                 $('#accordion-1, #accordion-2, #accordion-3').removeClass('is-rotated');
             },
 

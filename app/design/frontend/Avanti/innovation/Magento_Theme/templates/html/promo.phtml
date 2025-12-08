@@ -1,10 +1,25 @@
 <?php
-/** @var \Magento\Framework\View\Element\Template $block */
+/**
+* Copyright © Magento, Inc. All rights reserved.
+* See COPYING.txt for license details.
+*/
+?>
+<?php
+// phpcs:disable Magento2.Templates.ThisInTemplate.FoundThis
+
+
+/**
+* Category view template
+*
+* @var $block \Magento\Framework\View\Element\Template
+*/
+
+
 ?>
 
-<div class="promo-bar">
-    <?= __('Get %1 off your first order. Use the coupon %2',
-        '<span class="promo-highlight">&nbsp;$10.00&nbsp;</span>',
-        '<span class="code-highlight">&nbsp;DISCONTO10&nbsp;</span>'
-    ) ?>
-</div>
+
+   <div class="promo-header-message">
+       <?= __('Get %1 off your first order. Use coupon %2', '<strong>R$10,00</strong>', '<strong>DESCONTO10</strong>') ?>
+   </div>
+
+
