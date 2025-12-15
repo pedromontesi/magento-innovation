@@ -1,54 +1,65 @@
+<!-- Declaração da página e schema XML do Magento -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
     <body>
 
-
+        <!-- Referência ao container do painel do header -->
         <referenceContainer name="header.panel">
 
-
+            <!-- Cria um container para promoções dentro do header -->
             <container name="promo.header.wrapper" htmlClass="promo-wrapper" htmlTag="div">
 
-
+                <!-- Bloco que renderiza o template promo.phtml (promoção) antes de qualquer outro -->
                 <block class="Magento\Framework\View\Element\Template" name="promo.header.panel"
                        template="Magento_Theme::html/promo.phtml" before="-"/>
-
             </container>
 
         </referenceContainer>
 
+        <!-- Move o bloco de links do header (login, conta, registro) para dentro do container header-wrapper antes do minicart -->
         <move element="header.links" destination="header-wrapper" before="minicart"/>
 
+        <!-- Move o minicart para dentro do header-wrapper depois de qualquer elemento existente -->
         <move element="minicart" destination="header-wrapper" after="-"/>
 
+        <!-- Referência ao bloco de links do header para adicionar conteúdo extra -->
         <referenceBlock name="header.links">
+            <!-- Adiciona um novo bloco chamado header.links.or com o template or.phtml depois do link de autorização -->
             <block class="Magento\Framework\View\Element\Template" name="header.links.or"
                    template="Magento_Theme::html/or.phtml" after="authorization-link"/>
         </referenceBlock>
 
+        <!-- Referência ao bloco do logo -->
         <referenceBlock name="logo">
             <arguments>
+                <!-- Define o arquivo SVG do logo -->
                 <argument name="logo_file" xsi:type="string">images/avanti-logo.svg</argument>
+                <!-- Define largura e altura do logo -->
                 <argument name="logo_width" xsi:type="number">152.58</argument>
                 <argument name="logo_height" xsi:type="number">27.08</argument>
+                <!-- Texto alternativo para o logo -->
                 <argument name="logo_alt" xsi:type="string">Avanti Logo</argument>
             </arguments>
         </referenceBlock>
 
-
+        <!-- Container principal do conteúdo da página -->
         <referenceContainer name="main.content">
+            <!-- Adiciona container para newsletter no footer -->
             <container name="footer.newsletter"
                        label="Footer Columns Wrapper"
                        htmlTag="div"
                        htmlClass="footer-columns-wrapper"/>
         </referenceContainer>
 
-        <move element="form.subscribe" destination="footer.newsletter" before="-"/>
-
+        <!-- Remove blocos padrão que não são necessários -->
         <referenceBlock name="copyright" remove="true"/>
         <referenceBlock name="skip_to_content" remove="true"/>
         <referenceBlock name="footer_links" remove="true"/>
 
+        <!-- Container do footer -->
         <referenceContainer name="footer">
+            <!-- Adiciona bloco CMS que pode ser gerenciado pelo admin (footer_row_1) -->
             <block class="Magento\Cms\Block\Block" name="footer_row_1">
                 <arguments>
                     <argument name="block_id" xsi:type="string">footer_row_1</argument>
@@ -56,14 +67,15 @@
             </block>
         </referenceContainer>
 
+        <!-- Container antes do fechamento da tag body -->
         <referenceContainer name="before.body.end">
+            <!-- Bloco CMS para copyright, também gerenciável pelo admin -->
             <block class="Magento\Cms\Block\Block" name="footer_copyright_block">
                 <arguments>
                     <argument name="block_id" xsi:type="string">footer_copyright_block</argument>
                 </arguments>
             </block>
         </referenceContainer>
-
 
     </body>
 </page>

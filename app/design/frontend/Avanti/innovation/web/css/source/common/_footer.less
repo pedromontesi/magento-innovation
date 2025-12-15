@@ -5,32 +5,41 @@
 }
 
 hr {
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
+
+.accordion {
+    margin-top: 16px;
+    margin-right: 16px;
+}
+
+
+.footer.content {
+    border-top: 0;
+}
+
 
 .accordion {
     transition: transform .35s ease;
     transform-origin: center;
+
+    &.is-rotated {
+        transform: rotate(180deg);
+    }
 }
 
-.accordion.is-rotated {
-    transform: rotate(180deg);
+.copyright-container {
+    span {
+        display: inline-block;
+        margin-left: 16px;
+        margin-right: 16px;
+        color: #303030;
+        text-align: center;
+    }
 }
-
-
-.copyright-content {
-    color: #303030;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 16px;
-    padding-right: 16px;
-    text-align: center;
-
-}
-
 
 // Mobile
-
 [data-content-type="divider"] {
     display: contents;
 }
@@ -57,41 +66,42 @@ hr {
 .title-accordion {
     align-items: center;
     justify-content: space-between;
-}
 
-.title-accordion h5 {
-    margin: 16px 0 0 16px;
-    color: #000;
-    font-weight: 700;
-    font-size: 16px;
-}
-
-.footer-content p {
-    margin: 11px 0 0 16px;
-    color: #303030;
-    font-weight: 400;
+    h5 {
+        margin: 16px 0 0 16px;
+        color: #000;
+        font-weight: 700;
+        font-size: 16px;
+    }
 }
 
 .footer-content {
     display: none;
+
+    p {
+        margin: 11px 0 0 16px;
+        color: #303030;
+        font-weight: 400;
+    }
 }
 
 .is-open {
     display: block !important;
 }
 
-
+// DESKTOP
 @media (min-width: 769px) {
 
+
     .logo-footer {
-        padding-right: 3.7rem;
+        padding-right: 43px;
     }
 
-    .copyright-content {
-        max-width: 1074px;
-
+    .copyright-container {
+        span {
+            max-width: 1074px;
+        }
     }
-
 
     [data-content-type="divider"] {
         display: contents;
@@ -100,7 +110,6 @@ hr {
     .hide-divider-desktop {
         display: none;
     }
-
 
     .payment-method-footer {
         margin: 48px 0 40px 0;
@@ -115,10 +124,7 @@ hr {
         align-items: flex-start;
         gap: 8.75rem;
         flex-direction: row !important;
-
     }
-
-
 
     .desktop-flex {
         display: flex;
@@ -127,7 +133,6 @@ hr {
         align-items: stretch;
         gap: 10px;
     }
-
 
     .footer-content {
         display: block !important;
@@ -139,12 +144,13 @@ hr {
         display: none;
     }
 
-    .title-accordion h5 {
-        margin: 16px 0 0 16px;
-        color: #000;
-        font-weight: 700;
-        font-size: 14px;
+    .title-accordion {
+        h5 {
+            margin: 16px 0 0 16px;
+            color: #000;
+            font-weight: 700;
+            font-size: 14px;
+        }
     }
-
-
 }
+

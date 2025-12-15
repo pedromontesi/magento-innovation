@@ -1,2 +1,34 @@
 @import 'common/_promo.less';
 @import 'common/_navigation.less';
+
+
+
+
+.block-static-block.widget, .block-cms-link.widget {
+    margin-bottom: 0 !important;
+}
+
+.block.widget .product-item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.shop-by-category {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.media-width(@extremum, @break)
+when
+    (@extremum = "max")
+    and
+    (@break = @screen__m) {
+    .store-benefits {
+        margin-right: 0 ;
+
+    }
+}
+
+

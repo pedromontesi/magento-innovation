@@ -1,11 +1,9 @@
 //  Common (styles-m.css)
-//  _____________________________________________
 & when (@media-common =true) {
     .page-wrapper .page-header .panel.wrapper .panel.header{
         .lib-css(padding, 4px 22px);
     }
 
-    // mensagem promocional no topo do header
     .page-header .header.panel .promo-header-message {
         .lib-css(text-align, center);
         .lib-css(font-weight, 700);
@@ -26,7 +24,6 @@
 }
 
 //  Mobile
-//  _____________________________________________
 .media-width(@extremum, @break)
     when
     (@extremum = "max")
@@ -36,7 +33,6 @@
         .lib-css(font-size, 1.4rem);
         .lib-css(padding, 0);
 
-        // strong's da mensagem de promo
         strong:first-child {
             .lib-css(border-radius, 0);
         }
