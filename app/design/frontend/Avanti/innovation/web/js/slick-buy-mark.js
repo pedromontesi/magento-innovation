@@ -1,17 +1,29 @@
 define([
     'jquery',
-    'slick'
-], function ($) {
+    'slick',
+    'matchMedia'
+], function ($, slick, mediaCheck) {
     'use strict';
 
-    $(document).ready(function () {
-        $('.slick-buy-mark').slick({
-            infinite: true,
-            slidesToShow: 6,
-            slidesToScroll: 3,
-            arrows: true,
-        });
+    mediaCheck({
+        media: '(min-width: 769px)',
+        entry: function () {
+
+            if (!$('.slick-buy-mark').hasClass('slick-initialized')) {
+                $('.slick-buy-mark').slick({
+                    dots: false,
+                    infinite: true,
+                    speed: 300,
+                    slidesToShow: 6,
+                    slidesToScroll: 6
+                });
+            }
+        },
+        exit: function () {
+            if ($('.slick-buy-mark').hasClass('slick-initialized')) {
+                $('.slick-buy-mark').slick('unslick');
+            }
+        }
     });
+
 });
-
-

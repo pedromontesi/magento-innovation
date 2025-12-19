@@ -1,3 +1,15 @@
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .swatch-attribute.color {
+        margin-bottom: 10px;
+    }
+
+    .swatch-attribute.size .swatch-option {
+        margin-right: 10px;
+    }
+}
+
+
+
 // Product Card
 .product-item {
 
@@ -91,8 +103,19 @@
     border: none;
     display: flex;
     justify-content: center;
-    gap: 15px;
 }
+
+.swatch-attribute.size .swatch-option {
+    margin-right: 15px;
+}
+
+
+.swatch-attribute.size .swatch-option:last-child {
+    margin-right: 0;
+}
+
+
+
 
 .swatch-attribute.size .swatch-option.selected {
     background: #005CFF;
@@ -107,6 +130,16 @@
 
 .product-image-photo {
     padding: 6px 8px 9px 8px;
+}
+
+
+.swatch-option.color {
+    margin-right: 15px;
+    border: none;
+}
+
+.swatch-option.color:last-child {
+    margin-right: 0
 }
 
 // Widgets / Sliders
