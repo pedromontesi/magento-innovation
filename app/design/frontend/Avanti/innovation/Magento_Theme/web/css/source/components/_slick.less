@@ -1,0 +1,40 @@
+.slick-prev.slick-arrow,
+.slick-next.slick-arrow {
+    border-radius: 50%;
+    border: 1px solid #005CFF;
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+    background: #fff;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.25);
+}
+
+.slick-prev{
+    left: -1.4rem;
+}
+
+.slick-next {
+    right: -1.4rem;
+
+}
+
+.slick-next::before,
+.slick-prev::before {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.slick-prev::before {
+    padding-right: 12px;
+    background-image: url('@{baseDir}images/slick/right-slick-arrow.svg');
+}
+
+.slick-next::before {
+    padding-left: 12px;
+    background-image: url('@{baseDir}images/slick/left-slick-arrow.svg');
+}
