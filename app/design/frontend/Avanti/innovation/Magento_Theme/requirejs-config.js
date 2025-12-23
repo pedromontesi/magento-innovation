@@ -11,5 +11,6 @@ var config = {
         'footerAccordion',
         'slickBuyMark',
         'slickBanner'
+
     ]
 };

@@ -22,6 +22,18 @@
     right: 0.6rem;
 }
 
+
+.product-slick .slick-prev,
+.product-slick .slick-next  {
+    top: 201px;
+}
+
+.product-slick .slick-next {
+    right: -0.4rem;
+}
+
+
+
 .slick-next::before,
 .slick-prev::before {
     content: '';
@@ -41,4 +53,11 @@
 .slick-next::before {
     padding-left: 12px;
     background-image: url('@{baseDir}images/slick/left-slick-arrow.svg');
+}
+
+.media-width(@extremum, @break) when (@extremum = "max") and (@break = @screen__m) {
+    .product-slick .slick-prev,
+    .product-slick .slick-next {
+        display: none !important;
+    }
 }
