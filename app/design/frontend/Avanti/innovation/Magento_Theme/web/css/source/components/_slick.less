@@ -57,7 +57,9 @@
 
 .media-width(@extremum, @break) when (@extremum = "max") and (@break = @screen__m) {
     .product-slick .slick-prev,
-    .product-slick .slick-next {
+    .product-slick .slick-next,
+    .slick-banner .slick-next,
+    .slick-banner .slick-prev{
         display: none !important;
     }
 }
