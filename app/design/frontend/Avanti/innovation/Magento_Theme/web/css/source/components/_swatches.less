@@ -1,46 +1,46 @@
 .swatch-option {
-    border: 1px solid #707070;
-    height: 20px;
-    width: 20px;
-    min-width: 0;
-    border-radius: 50%;
+    .lib-css(border, 1px solid #707070);
+    .lib-css(height, 20px);
+    .lib-css(width, 20px);
+    .lib-css(min-width, 0);
+    .lib-css(border-radius, 50%);
 
     &:focus {
-        box-shadow: none;
+        .lib-css(box-shadow, none);
     }
 }
 
 .swatch-option.text {
-    height: 27px;
-    width: 27px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .lib-css(height, 27px);
+    .lib-css(width, 27px);
+    .lib-css(display, flex);
+    .lib-css(align-items, center);
+    .lib-css(justify-content, center);
 }
 
 .swatch-attribute-options,
 .swatch-attribute-options.clearfix {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    .lib-css(margin, 0);
+    .lib-css(display, flex);
+    .lib-css(justify-content, center);
+    .lib-css(flex-wrap, wrap);
 }
 
 // Swatch – Color
 
 .swatch-attribute.color {
-    margin: 30px 0 15px;
-    border: none;
-    display: flex;
-    justify-content: center;
+    .lib-css(margin, 30px 0 15px);
+    .lib-css(border, none);
+    .lib-css(display, flex);
+    .lib-css(justify-content, center);
 }
 
 .swatch-option.color {
-    margin-right: 15px;
-    border: none;
+    .lib-css(margin-right, 15px);
+    .lib-css(border, none);
 
     &:last-child {
-        margin-right: 0;
+        .lib-css(margin-right, 0);
     }
 }
 
@@ -49,21 +49,19 @@
 .swatch-attribute.size {
 
     .swatch-option {
-        background: #f0f0f0;
-        color: #949494;
-        margin-right: 15px;
+        .lib-css(background, #f0f0f0);
+        .lib-css(color, #949494);
+        .lib-css(margin-right, 15px);
 
         &:last-child {
-            margin-right: 0;
+            .lib-css(margin-right, 0);
         }
 
         &.selected {
-            background: #005CFF;
-            border: 1px solid #DFDFDF;
-            color: #fff;
-            outline: none;
+            .lib-css(background, #005CFF);
+            .lib-css(border, 1px solid #DFDFDF);
+            .lib-css(color, #fff);
+            .lib-css(outline, none);
         }
     }
 }
-
-

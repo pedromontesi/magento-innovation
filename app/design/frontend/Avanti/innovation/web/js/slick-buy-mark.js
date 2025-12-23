@@ -5,17 +5,6 @@ define([
 ], function ($, slick, mediaCheck) {
     'use strict';
 
-    // SLIDER DE BANNER
-    if ($('.slick-banner').length &&
-        !$('.slick-banner').hasClass('slick-initialized')) {
-
-        $('.slick-banner').slick({
-            arrows: true,
-
-        });
-    }
-
-    //SLIDER DE PRODUTOS
     mediaCheck({
         media: '(min-width: 769px)',
 
@@ -40,5 +29,4 @@ define([
             }
         }
     });
-
 });
