@@ -6,6 +6,10 @@
 @import 'components/_price.less';
 @import 'components/_widgets.less';
 @import 'components/_slick.less';
+@import "components/_topbar.less";
+@import "components/_pages.less";
+@import "components/_breadcrumbs.less";
+@import "components/_newsletter.less";
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     #html-body .reset-right-margin {
@@ -17,7 +21,7 @@
         display: none !important;
     }
 
-    #html-body .block-static-block [data-content-type="row"] .slick-buy-mark {
+    #html-body .block-static-block [data-content-type="row"] .slick-by-brand {
         display: flex ;
         flex-wrap: wrap;
         flex-direction: row;
@@ -26,7 +30,7 @@
         justify-content: space-around ;
     }
 
-    .slick-buy-mark img {
+    .slick-by-brand img {
         width: 108px;
         height: 56px;
     }
@@ -45,6 +49,13 @@
 
 }
 
+
+.filter-options-title {
+    color: #000 !important;
+    font-weight: 700 !important;
+}
+
+
 #html-body .block-static-block [data-content-type="row"] .title-item-container {
     display: flex;
     justify-content: space-between;
@@ -62,7 +73,7 @@
     flex-wrap: wrap;
 }
 
-.slick-buy-mark img {
+.slick-by-brand img {
     width: 190px;
     height: 106px;
 }
@@ -93,8 +104,14 @@
     flex-wrap: wrap;
 }
 
+.block-subtitle.filter-subtitle {
+    color: #000;
+    font-size: 16px;
+}
+
 .media-width(@extremum, @break) when (@extremum = "max") and (@break = @screen__m) {
     .store-benefits {
         margin-right: 0;
     }
 }
+

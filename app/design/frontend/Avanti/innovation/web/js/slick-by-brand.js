@@ -9,10 +9,10 @@ define([
         media: '(min-width: 769px)',
 
         entry: function () {
-            if ($('.slick-buy-mark').length &&
-                !$('.slick-buy-mark').hasClass('slick-initialized')) {
+            if ($('.slick-by-brand').length &&
+                !$('.slick-by-brand').hasClass('slick-initialized')) {
 
-                $('.slick-buy-mark').slick({
+                $('.slick-by-brand').slick({
                     dots: false,
                     infinite: true,
                     speed: 300,
@@ -24,8 +24,8 @@ define([
         },
 
         exit: function () {
-            if ($('.slick-buy-mark').hasClass('slick-initialized')) {
-                $('.slick-buy-mark').slick('unslick');
+            if ($('.slick-by-brand').hasClass('slick-initialized')) {
+                $('.slick-by-brand').slick('unslick');
             }
         }
     });

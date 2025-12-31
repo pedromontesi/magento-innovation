@@ -1,5 +1,6 @@
-.slick-prev.slick-arrow,
-.slick-next.slick-arrow {
+
+// Slick arrows mixin
+.lib-slick-arrow() {
     border-radius: 50%;
     border: 1px solid #005CFF;
     width: 30px;
@@ -9,33 +10,45 @@
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.25);
 }
 
-.slick-prev{
+//
+// Slick arrows base
+
+.slick-prev.slick-arrow,
+.slick-next.slick-arrow {
+    .lib-slick-arrow();
+}
+
+.slick-prev {
     left: -1.4rem;
 }
 
 .slick-next {
     right: -1.4rem;
-
-}
-
-.slick-buy-mark .slick-next {
-    right: 0.6rem;
 }
 
 
-.product-slick .slick-prev,
-.product-slick .slick-next  {
-    top: 201px;
+// Context variations
+.slick-by-brand {
+    .slick-next {
+        right: 0.6rem;
+    }
 }
 
-.product-slick .slick-next {
-    right: -0.4rem;
+.product-slick {
+    .slick-prev,
+    .slick-next {
+        top: 201px;
+    }
+
+    .slick-next {
+        right: -0.4rem;
+    }
 }
 
 
-
-.slick-next::before,
-.slick-prev::before {
+// Slick arrow icons
+.slick-prev::before,
+.slick-next::before {
     content: '';
     display: block;
     width: 12px;
@@ -54,6 +67,7 @@
     padding-left: 12px;
     background-image: url('@{baseDir}images/slick/left-slick-arrow.svg');
 }
+
 
 .media-width(@extremum, @break) when (@extremum = "max") and (@break = @screen__m) {
     .product-slick .slick-prev,

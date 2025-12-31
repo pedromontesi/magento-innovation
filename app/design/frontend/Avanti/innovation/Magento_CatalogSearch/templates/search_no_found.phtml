@@ -1,0 +1,19 @@
+
+
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+$searchQuery = $block->getRequest()->getParam('q');
+?>
+
+<p class="search-no-found">Não encontramos resultados para "<strong class="search-term"><?= $block->escapeHtml($searchQuery) ?></strong>"</p>
+    <div class="no-found-container">
+        <p>O que devo fazer?</p>
+        <div>
+            <ul class="list-instructions">
+                <li>- Verifique os termos digitados.</li>
+                <li>- Utilize sinônimos ao termo desejado.</li>
+                <li>- Tente utilizar uma única palavra.</li>
+                <li>- Utilize termos genéricos na busca.</li>
+            </ul>
+        </div>
+    </div>

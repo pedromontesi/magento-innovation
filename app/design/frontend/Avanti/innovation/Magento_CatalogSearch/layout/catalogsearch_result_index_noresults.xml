@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <body>
+
+        <!-- Classe customizada no body -->
+        <attribute name="class" value="search-no-results-custom"/>
+
+        <!-- Remove resultado padrão -->
+        <referenceBlock name="search.result" remove="true"/>
+
+        <!-- Conteúdo da página -->
+        <referenceContainer name="content">
+
+            <!-- Template custom -->
+            <block class="Magento\Framework\View\Element\Template"
+                   name="search.no.results.template"
+                   template="Magento_CatalogSearch::search_no_found.phtml"/>
+
+            <!-- CMS Static Block -->
+            <block class="Magento\Cms\Block\Block"
+                   name="cms.secao.meio.1"
+                   after="search.no.results.template">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">secao_meio_1</argument>
+                </arguments>
+            </block>
+
+        </referenceContainer>
+
+    </body>
+</page>

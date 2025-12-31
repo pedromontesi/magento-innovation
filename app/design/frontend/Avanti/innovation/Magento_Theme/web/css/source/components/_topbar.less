@@ -1,0 +1,40 @@
+.toolbar select {
+    background-color: #fff;
+    border-color: #000000;
+}
+
+.toolbar {
+    color :#444444;
+    font-weight: bold;
+}
+
+
+@media (min-width: 768px), print {
+    .modes-mode.active {
+        box-shadow: none !important;
+        background: #005CFF !important;
+        color: #FFF !important;
+    }
+
+    .modes-mode {
+        border: none !important;
+        background-color: #D9D9D9 !important;
+        box-shadow: none !important;
+    }
+
+    .modes-label + .modes-mode {
+        border-radius: 0 !important;
+    }
+
+
+    .modes-mode::before {
+     color: #fff !important;
+    }
+
+    .modes-mode:last-child,
+    .modes-mode:first-child {
+        border-radius: 0 !important;
+    }
+
+
+}

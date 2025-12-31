@@ -1,0 +1,16 @@
+<?php
+namespace Vendor\ToolbarCustomization\Plugin;
+
+use Magento\Catalog\Block\Product\ProductList\Toolbar;
+
+class ToolbarPlugin
+{
+    public function afterGetAvailableOrders(Toolbar $subject, $orders)
+    {
+        // Mantém apenas essas ordenações
+        return [
+            'price' => __('Price'),
+            'name'  => __('Name')
+        ];
+    }
+}
