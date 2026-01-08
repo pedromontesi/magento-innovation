@@ -10,7 +10,7 @@
         <referenceBlock name="catalog.leftnav" remove="true"/>
 
         <!-- Remove sidebars -->
-        <referenceContainer name="sidebar.main" remove="true"/>
+<!--        <referenceContainer name="sidebar.main" remove="true"/>-->
         <referenceContainer name="sidebar.additional" remove="true"/>
 
     </body>

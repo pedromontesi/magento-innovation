@@ -8,6 +8,46 @@
     }
 }
 
+.filter .block-subtitle {
+    border-bottom: none;
+}
+
+
+.filter-options-title {
+    padding: 16px 40px 0 10px;
+}
+
+.filter.active .filter-subtitle {
+    font-weight: 700;
+}
+
+
+@media only screen and (max-width: 767px) {
+.filter.active .filter-title {
+    border-bottom: none !important;
+    height: 48px;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    }
+
+    .filter.active .filter-options-title {
+        font-weight: 400 !important;
+    }
+
+
+}
+
+
+.filter-options-item {
+    border: solid 1px #F5F5F5;
+}
+
+.action.tocompare {
+    display: none !important;
+}
 
 // Product Card
 .product-item {
@@ -147,6 +187,7 @@
     }
 }
 
+
 // Actions
 .product-item-inner {
 
@@ -157,9 +198,6 @@
             border-radius: 0 0 15px 15px;
         }
 
-        .actions-secondary {
-            display: none;
-        }
     }
 }
 
@@ -167,6 +205,8 @@
     border-radius: 0 0 15px 15px;
     min-width: 242px;
     min-height: 40px;
+    position: absolute;
+    width: 19%;
 }
 
 //
@@ -195,6 +235,8 @@
     margin-bottom: 24px;
     min-height: 524px;
     min-width: 238px;
+    display: grid;
+
 }
 
 .products-list .product-item {
@@ -238,6 +280,19 @@
 
 }
 
+.action.tocompare {
+    display: none !important;
+}
+
+
+.catalogsearch-result-index .toolbar-amount {
+    display: none;
+
+}
+
+.search.results .toolbar-amount {
+    display: none;
+}
 
 
 .filter-title strong:before {
@@ -251,6 +306,26 @@
     .lib-css(background-size, contain);
     .lib-css(background-position, center);
 }
+
+.filter .active filter-title strong:before {
+
+}
+
+@media only screen and (max-width: 767px) {
+    .filter.active .filter-title strong {
+        box-shadow: none;
+        background: none;
+        border: 0;
+        color: transparent;
+        left: auto;
+        right: 3px;
+        top: -9px !important;
+        display: inline-block;
+        text-decoration: none;
+    }
+}
+
+
 
 
 .page-with-filter .toolbar-amount {
@@ -287,11 +362,16 @@
     position: absolute;
     z-index: 1;
     margin-left: 197px;
-    margin-top: -520px;
+    margin-top: -504px;
 }
 
 .product-item .action.towishlist::before {
     color: #005CFF;
+}
+
+
+.toolbar.toolbar-products {
+    margin-top: 81px;
 }
 
 .amount-mobile {
@@ -301,6 +381,10 @@
 .catalogsearch-result-index .toolbar-amount {
     display: inline-block !important;
 }
+
+
+
+
 
 .media-width(@extremum, @break) when (@extremum = "max") and (@break = @screen__m) {
     .page-with-filter .toolbar-amount {
