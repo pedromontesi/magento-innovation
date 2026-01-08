@@ -9,7 +9,6 @@
 }
 
 
-
 // Product Card
 .product-item {
 
@@ -68,8 +67,6 @@
 }
 
 
-
-
 .product-item {
     line-height: 0 !important;
 }
@@ -97,7 +94,7 @@
     }
 }
 
- .swatch-attribute.color {
+.swatch-attribute.color {
     margin-bottom: 15px;
     margin-top: 30px;
     border: none;
@@ -168,4 +165,212 @@
 
 .action.tocart.primary {
     border-radius: 0 0 15px 15px;
+    min-width: 242px;
+    min-height: 40px;
+}
+
+//
+
+.installment-text {
+    margin-top: 21px;
+
+}
+
+
+
+
+
+
+
+
+.products.list.items.product-items {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 32px;
+
+}
+
+.product-item .product-item-info {
+    margin-right: 0 !important;
+    margin-bottom: 24px;
+    min-height: 524px;
+    min-width: 238px;
+}
+
+.products-list .product-item {
+    display: flex;
+}
+
+[data-container="product-list"] {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    flex-direction: row !important;
+    min-width: 974px !important;
+    justify-content: space-evenly !important;
+    align-items: center !important;
+    padding: 20px !important;
+}
+
+
+.products {
+    margin: 0 !important;
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+.filter-title strong {
+    background-color: #fff;
+    box-shadow: none;
+    display: flex;
+    gap: 4px;
+    border: 1px solid #ddd;
+    left: 0;
+    line-height: 16px;
+    padding: 7px 10px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    z-index: 2;
+    font-weight: bold;
+    color: #000;
+    font-size: 14px;
+    border-radius: 8px;
+
+}
+
+
+
+.filter-title strong:before {
+    .lib-css(background-image, url("@{baseDir}images/filter-button.svg"));
+    .lib-css(content, """");
+    .lib-css(display, block);
+    .lib-css(width, 14px);
+    .lib-css(height, 14px);
+    .lib-css(font-weight, 600);
+    .lib-css(background-repeat, no-repeat);
+    .lib-css(background-size, contain);
+    .lib-css(background-position, center);
+}
+
+
+.page-with-filter .toolbar-amount {
+    position: static;
+    justify-content: center;
+    display: flex;
+    gap: 2px;
+    font-weight: normal;
+    color: #005CFF;
+}
+
+.toolbar select {
+    border-color: #005CFF;
+}
+
+.tittle-category {
+    margin-top: 55px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.category-description {
+    margin-bottom: 0;
+}
+
+.tittle-category {
+    margin-top: 55px;
+    margin-bottom: 16px;
+}
+
+.actions-secondary {
+    display: block !important;
+    position: absolute;
+    z-index: 1;
+    margin-left: 197px;
+    margin-top: -520px;
+}
+
+.product-item .action.towishlist::before {
+    color: #005CFF;
+}
+
+.amount-mobile {
+    display: none;
+}
+
+.catalogsearch-result-index .toolbar-amount {
+    display: inline-block !important;
+}
+
+.media-width(@extremum, @break) when (@extremum = "max") and (@break = @screen__m) {
+    .page-with-filter .toolbar-amount {
+        margin-bottom: 24px;
+    }
+
+    .catalogsearch-result-index .page-products .sorter {
+        display: none !important;
+    }
+
+
+    .catalogsearch-result-index h1.page-title {
+        justify-content: center !important;
+        display: flex !important;
+    }
+
+    .catalogsearch-result-index .toolbar.toolbar-products {
+        margin-bottom: 25px !important;
+        margin-top: 88px !important;
+    }
+
+    .catalogsearch-result-index
+    .search.results
+    .toolbar-products
+    .toolbar-sorter.sorter {
+        display: none !important;
+    }
+
+
+    .catalogsearch-result-index .amount-mobile {
+        color: #656565;
+    }
+
+    .catalogsearch-result-index .amount-mobile {
+        display: initial;
+    }
+
+    .catalogsearch-result-index .amount-desktop {
+        display: none;
+    }
+
+    .amount-default {
+        display: none;
+    }
+
+    .amount-mobile {
+        display: none;
+    }
+
+
+
+    .mobile-slide-category {
+        display: none;
+    }
+
+    .tittle-category {
+        margin-top: 26px !important;
+        margin-bottom: 24px !important;
+        justify-content: initial;
+    }
+
+    .tittle-category p {
+        font-size: 20px !important;
+    }
+
+}
+
+
+[data-container="product-list"] .action.tocart.primary {
+    border-radius: 15px !important;
+    margin-top: 24px;
+    margin-bottom: 26px;
 }

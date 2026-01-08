@@ -1,0 +1,27 @@
+<?php
+/** @var $block \Magento\Catalog\Block\Product\ProductList\Toolbar */
+
+$first = $block->getFirstNum();
+$last  = $block->getLastNum();
+$total = $block->getTotalNum();
+?>
+
+<p id="toolbar-amount" class="toolbar-amount">
+
+    <span class="amount-desktop">
+        <?= __(
+            'Items %1-%2 of %3',
+            $first,
+            $last,
+            $total
+        ) ?>
+    </span>
+
+    <span class="amount-mobile">
+        <?= $total === 1
+            ? __('%1 produto encontrado', $total)
+            : __('%1 produtos encontrados', $total)
+        ?>
+    </span>
+
+</p>

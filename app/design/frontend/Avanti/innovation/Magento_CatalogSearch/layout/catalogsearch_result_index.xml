@@ -4,17 +4,14 @@
 
     <body>
 
-        <!-- Remove layered navigation (Filtros) -->
+        <!-- Remove layered navigation -->
         <referenceBlock name="catalogsearch.leftnav" remove="true"/>
         <referenceBlock name="layered.navigation" remove="true"/>
         <referenceBlock name="catalog.leftnav" remove="true"/>
 
-        <!-- Garante que a sidebar não renderize -->
+        <!-- Remove sidebars -->
         <referenceContainer name="sidebar.main" remove="true"/>
         <referenceContainer name="sidebar.additional" remove="true"/>
-
-        <referenceBlock name="search.result.did_you_mean" remove="true"/>
-        <referenceBlock name="catalogsearch.result" remove="true"/>
 
     </body>
 </page>
