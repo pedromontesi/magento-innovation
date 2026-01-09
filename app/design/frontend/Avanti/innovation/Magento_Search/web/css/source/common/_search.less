@@ -95,6 +95,9 @@
     box-shadow: none;
 }
 
+
+
+
 .search-autocomplete ul:not(:empty) {
     border: none;
 }
@@ -110,13 +113,21 @@
     padding-left: 20px;
 }
 
-@media (min-width: 768px), print {
+
     .search-autocomplete {
         margin-top: -6px !important;
     }
+
+
+@media (max-width: 767px) {
+    .search-autocomplete {
+        display: none;
+        margin-top: -22px !important;
+        overflow: hidden;
+        position: absolute;
+        z-index: 3;
+    }
 }
-
-
 
 
 //  Desktop
